@@ -1,0 +1,39 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dub",
+			"run": false,
+			"cwd": "${workspaceFolder}",
+			"compiler": "$current",
+			"archType": "$current",
+			"buildType": "$current",
+			"configuration": "$current",
+			"problemMatcher": [
+				"$dmd"
+			],
+			"group": {
+				"kind": "build"
+			},
+			"label": "dub: Build hauntologl",
+			"detail": "dub build --compiler=dmd -b=debug -c=application"
+		},
+		{
+			"type": "dub",
+			"test": true,
+			"cwd": "${workspaceFolder}",
+			"compiler": "$current",
+			"archType": "$current",
+			"buildType": "$current",
+			"configuration": "$current",
+			"problemMatcher": [
+				"$dmd"
+			],
+			"group": {
+				"kind": "build"
+			},
+			"label": "dub: Test hauntologl",
+			"detail": "dub test --compiler=dmd -a=x86_64 -b=debug -c=testApp-es"
+		}
+	]
+}

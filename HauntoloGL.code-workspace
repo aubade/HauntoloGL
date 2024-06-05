@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "HauntoloGL",
+			"path": "."
+		}
+	],
+	"settings": {
+		"d.dubArchType": "x86",
+		"sync-rsync.sites":[
+			{"localPath": ".",
+			"remotePath":"erika@mayaka.noip.me:Devel/HauntoloGL"}
+		]
+	}
+}

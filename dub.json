@@ -1,0 +1,76 @@
+{
+	"authors": [
+		"erika"
+	],
+	"copyright": "Copyright © 2024, erika",
+	"dependencies": {
+		"bindbc-sdl": "~>1.4.7",
+		"gl3n": "~>1.4.1"
+	},
+	"stringImportPaths": [
+		"."
+	],
+	"subConfigurations": {
+		"bindbc-sdl":"static"
+	},
+	"versions": [
+		"SDL_2014"
+	],
+	"libs": [
+		"SDL2"
+	],	
+	"description": "A GL-Based 2D graphics doodad",
+	"license": "LGPL-3.0-or-later",
+	"name": "hauntologl",
+	"configurations": [
+		{
+			"name":"hauntologl-es",
+			"targetType":"library",
+			"versions":[
+				"GLES_20"
+			],
+			"dependencies":{
+				"bindbc-gles":"~>0.0.3"
+			}
+		},
+		{
+			"name":"hauntologl",
+			"targetType":"library",
+			"versions":[
+				"GL_20","GL_ARB", "GL_AllowDeprecated"
+			],
+			"dependencies":{
+				"bindbc-opengl":"~>1.1.0"
+			}
+		},
+		{
+			"name":"testApp-es",
+			"targetType":"executable",
+			"versions":[
+				"GLES_20","TESTAPP"
+			],
+			"dependencies":{
+				"bindbc-gles":"~>0.0.3"
+			}
+		},
+		{
+			"name":"testApp-gl",
+			"targetType":"executable",
+			"versions":[
+				"GL_20","GL_ARB", "GL_AllowDeprecated","TESTAPP"
+			],
+			"dependencies":{
+				"bindbc-opengl":"~>1.1.0"
+			}
+		}
+	],
+	"buildTypes": {
+        "debug": { "buildOptions": ["debugMode", "optimize"] },
+        "release": { "buildOptions": ["releaseMode", "optimize", "inline"],
+                    "dflags": ["-boundscheck=off"],
+                    "dflags-ldc": ["-flto=full"] ,
+					"lflags-ldc":["-flto"]
+				}
+				
+    }
+}
