@@ -2,11 +2,20 @@ module hauntologl.render;
 
 import hauntologl.drawable;
 import hauntologl.window;
+import hauntologl.gl.textures;
 
-class RenderWindow:Window,RenderTarget {
+@disable class RenderWindow:Window,DrawTarget {
+	void bindTarget() {
 
+	}
+
+	this(T...)(auto ref T params) {
+		super (params);
+	}
 }
 
-class RenderTexture:Texture,RenderTarget {
+class RenderTexture:Texture,DrawTarget {
+	void bindTarget() {
 
+	}
 }

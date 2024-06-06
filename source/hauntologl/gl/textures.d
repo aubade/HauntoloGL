@@ -69,6 +69,11 @@ class Texture {
 		NearestMipmapLinear = GL_NEAREST_MIPMAP_LINEAR,
 		LinearMipmapLinear = GL_LINEAR_MIPMAP_LINEAR
 	}
+	enum Wrap:GLenum {
+		Repeat = GL_REPEAT,
+		ClampToEdge = GL_CLAMP_TO_EDGE,
+		MirroredRepeat = GL_MIRRORED_REPEAT
+	}
 
 	static size_t pixelSize(Format format, Size size) {
 		final switch (size) {
@@ -123,7 +128,7 @@ class Texture {
 	}
 
 	void setParameter(T)(GLenum parameter, T value, Type target = Type.Texture2D) if (is(T:int) || is(T:float)) {
-		bind(target);
+		this.bind(target);
 		static if (is(T:int)) {
 			glTexParameteri(target, parameter, value);
 		} else static if (is(T:float)) {

@@ -11,6 +11,7 @@ import hauntologl.drawable;
 struct BGVertex {
 	Coord[] pos;
 	Coord[] texPos;
+	Coord[] palPos;
 }
 
 struct LightingVertex {
